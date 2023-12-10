@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Consultar producto</title>
+</head>
+<body>
+
+<h1>Datos de la consulta</h1>
+
+<div th:if="${producto!=null}">
+    <ul>
+        <li th:text="${producto.id}"></li>
+        <li th:text="${producto.nombre}"></li>
+        <li th:text="${producto.getStock()}"></li>
+        <li th:text="${producto.precio}"></li>
+        <li th:text="${producto.categorie.nombre}"></li>
+    </ul>
+</div>
+
+<div th:if="${producto==null}">
+    <p class="error">Debes proporcionar datos si quieres consultar</p>
+</div>
+
+</body>
+</html>
